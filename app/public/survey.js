@@ -1,6 +1,6 @@
 function friend(name, photo, score) {
     this.name = name;
-    this.phote = photo;
+    this.photo = photo;
     this.score = score ;
 }
 
@@ -22,8 +22,32 @@ $("#submit").on("click", function(){
     console.log(nameObj + " " + photoObj + " " + scoreArray);
     
     var friendInfo = new friend(nameObj, photoObj, scoreArray);
+    
     console.log(friendInfo);
+    
+    var newDiff = 0;
+    var leastDiff = 4234234324;
+    var matchedFriend;
+    
+    for (var i = 0; i < friendArray.length; i++){
+        
+        newDiff = compare(friendInfo, friendArray[i]);
+        
+        if (newDiff < leastDiff) {
+            
+            leastDiff = newDiff;
+            matchedFriend = friendArray[i];
+        }
+        
+    }
+    console.log(matchedFriend);
+    $("#friend").append(matchedFriend.name + "<img src='" + matchedFriend.photo + "'>");
+    
+    $("#myModal").modal("show");
+    
 });
+
+
 
 //push friends into this array to compare later
 var friendArray = [];
@@ -50,5 +74,28 @@ friendArray.push(new friend(
     "Landen", "http://www.bakerbotts.com/~/media/images/people/l/landen-paul-b/landenpaul.jpg",
     [1,2,1,2,1,2,1,2,1,2]));
 
+function compare(newFriend, otherFriend) {
+    var total= 0;
+    
+    for (var i = 0; i < 10; i++){
+        
+        var diff= Math.abs(newFriend.score[i] - otherFriend.score[i]);
+    
+    
+        total = (total+diff);
+        
+        
+    }
+    return(total);
+}
+
+
+//find the friend with the lowest total and display their info in an alert
+
+
+
+
+
+ 
 console.log("still connected");
 
