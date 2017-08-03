@@ -19,12 +19,12 @@ function friend(name, photo, score) {
 var friendInfo = new friend(//put the values in here
 )
 //
-$("#submit").on(click, function(){
-    
-    var nameObj= $("#nameInput").val().trim();
-    var photoObj = $("#photoInput").val().trim();
-    var scoreObj = $("#")
-    
-    
-    
-});
+//$("#submit").on(click, function(){
+//    
+//    var nameObj= $("#nameInput").val().trim();
+//    var photoObj = $("#photoInput").val().trim();
+//   // var scoreObj = $("")
+//    
+//    
+//    console.log(nameObj + " " + photoObj);
+//});
