@@ -1,0 +1,14 @@
+body {
+    margin: auto 0;
+    padding: 0;
+    border: 0;
+}
+
+.input-group {
+    width: 600px !important;
+        
+}
+
+.btn-primary {
+    margin-bottom: 15px;
+}
